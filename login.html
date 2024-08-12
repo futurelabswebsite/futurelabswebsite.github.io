@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login</title>
+</head>
+<body>
+  <input type="text" id="username" placeholder="Username">
+  <input type="password" id="password" placeholder="Password">
+  <button onclick="checkPassword()">Login</button>
+
+  <script>
+    const correctAnswer = "L3RoZV90cnV0aC5tcDQ="; // Replace with your desired message
+
+    function checkPassword() {
+      const username = document.getElementById("username").value;
+      const password = document.getElementById("password").value;
+
+      fetch('passwords.txt')
+        .then(response => response.text())
+        .then(data => {
+          const lines = data.split('\n');
+          const storedUsername = lines[0].split(':')[1].trim();
+          const storedPassword = lines[1].split(':')[1].trim();
+
+          if (username === storedUsername && password === storedPassword) {
+            // Replace all content with the secret message
+            document.body.innerHTML = atob(correctAnswer);
+          } else {
+            alert("Incorrect username or password");
+          }
+        })
+        .catch(error => {
+          console.error("Error fetching passwords:", error);
+          alert("An error occurred while processing your login. Please try again later.");
+        });
+    }
+  </script>
+</body>
+</html>
