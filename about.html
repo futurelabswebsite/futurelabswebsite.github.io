@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body style="background-color:#038cfc;">
+    <div class="wrapper">
+        <img src="assets/logo.png" alt="Future Labs Logo">
+        <h1>About us</h1>
+        <p>We at future labs got our name from our viewss about the  <strong>future</strong> 
+        We think that, the  future is about rapid growth in technology. And growth in technology, means growth for <strong> THE WORLD!</strong></p>
+        <p> You see the future can be flying cars, etc,etc however think of BETTER things, what if you had prefect  robot soliders ready to do your bidding, you would like that...</p>
+        <div class="glitch-wrapper">
+            <div class="glitch" data-glitch="WOUDLN'T YOU, AND WOULDN'T THEY LIKE AS WELL...  IT'S TOO BAD THAT... NEVERMIND AHAHAHAHAHAHAHAHAHAH">WOUDLN'T YOU, AND WOULDN'T THEY LIKE AS WELL...  IT'S TOO BAD THAT... NEVERMIND AHAHAHAHAHAHAHAHAHAH</div>
+        </div>
+    </div>
+
+    <div class="wrapper">
+        <img src="assets/logo.png" alt="Future Labs Logo">
+
+        <h2>AHAHAHAHAHAHAHAHAHAHAHAHHAAHHAHAHAAHH</h2>
+        <p>AHAHAHAHAHAHAHAHAHAHAHAHHAAHHAHAHAAHHAHAHAHAHAHAHAHAHAHAHAHAHHAAHHAHAHAAHHAHAHAHAHAHAHAHAHAHAHAHAHHAAHHAHAHAAHHAHAHAHAHAHAHAHAHAHAHAHAHHAAHHAHAHAAHHAHAHAHAHAHAHAHAHAHAHAHAHHAAHHAHAHAAHHAHAHAHAHAHAHAHAHAHAHAHAHHAAHHAHAHAAHHAHAHAHAHAHAHAHAHAHAHAHAHHAAHHAHAHAAHHAHAHAHAHAHAHAHAHAHAHAHAHHAAHHAHAHAAHHAHAHAHAHAHAHAHAHAHAHAHAHHAAHHAHAHAAHHAHAHAHAHAHAHAHAHAHAHAHAHHAAHHAHAHAAHHAHAHAHAHAHAHAHAHAHAHAHAHHAAHHAHAHAAHHAHAHAHAHAHAHAHAHAHAHAHAHHAAHHAHAHAAHHAHAHAHAHAHAHAHAHAHAHAHAHHAAHHAHAHAAHHAHAHAHAHAHAHAHAHAHAHAHAHHAAHHAHAHAAHHAHAHAHAHAHAHAHAHAHAHAHAHHAAHHAHAHAAHHAHAHAHAHAHAHAHAHAHAHAHAHHAAHHAHAHAAHHAHAHAHAHAHAHAHAHAHAHAHAHHAAHHAHAHAAHHAHAHAHAHAHAHAHAHAHAHAHAHHAAHHAHAHAAHHAHAHAHAHAHAHAHAHAHAHAHAHHAAHHAHAHAAHHAHAHAHAHAHAHAHAHAHAHAHAHHAAHHAHAHAAHHAHAHAHAHAHAHAHAHAHAHAHAHHAAHHAHAHAAHHAHAHAHAHAHAHAHAHAHAHAHAHHAAHHAHAHAAHHAHAHAHAHAHAHAHAHAHAHAHAHHAAHHAHAHAAHHAHAHAHAHAHAHAHAHAHAHAHAHHAAHHAHAHAAHHAHAHAHAHAHAHAHAHAHAHAHAHHAAHHAHAHAAHHAHAHAHAHAHAHAHAHAHAHAHAHHAAHHAHAHAAHH</p>
+    </div>
+
+    <script>
+        const cookieName = 'ahaha_mode';
+
+        function checkCookie() {
+            const cookieValue = document.cookie.split('; ').find(row => row.startsWith(cookieName));
+            return cookieValue ? cookieValue.split('=')[1] === 'true' : false;
+        }
+
+        function setCookie(value) {
+            document.cookie = `${cookieName}=${value}; expires=Thu, 18 Dec 2024 12:00:00 UTC; path=/`;
+        }
+
+        function replaceTextWithAhaha() {
+            const allTextNodes = document.body.getElementsByTagName('*');
+            for (let i = 0; i < allTextNodes.length; i++) {
+                const node = allTextNodes[i];
+                if (node.nodeType === Node.TEXT_NODE) {
+                    node.textContent = 'AHAHAHAHAHAHAHAHA';
+                }
+            }
+        }
+
+        window.addEventListener('scroll', () => {
+            const scrollHeight = document.documentElement.scrollHeight;
+            const clientHeight = document.documentElement.clientHeight;
+            const scrollTop = window.scrollY || document.documentElement.scrollTop;
+
+            if (scrollTop + clientHeight >= scrollHeight && !checkCookie()) {
+                replaceTextWithAhaha();
+                setCookie(true);
+            }
+        });
+
+        if (checkCookie()) {
+            replaceTextWithAhaha();
+        }
+    </script>
+</body>
+</html>

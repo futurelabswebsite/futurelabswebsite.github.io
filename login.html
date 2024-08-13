@@ -1,15 +1,103 @@
+<!-- TODO:
+ The  password checking method we use is VERY unsafe.
+ this is what we use:
+  fetch('passwords.txt')
+        .then(response => response.text())
+        .then(data => {
+          const lines = data.split('\n');
+          const storedUsername = lines[0].split(':')[1].trim();
+          const storedPassword = lines[1].split(':')[1].trim();
+you know how someone can easily access it then RIGHT.
+we need to fix this! 
+
+
+
+
+
+
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html>
 <head>
   <title>Login</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <body style="background-color:#038cfc;"></body>
   <input type="text" id="username" placeholder="Username">
   <input type="password" id="password" placeholder="Password">
   <button onclick="checkPassword()">Login</button>
 
   <script>
-    const correctAnswer = "L3RoZV90cnV0aC5tcDQ="; // Replace with your desired message
+    const truth = "L290aGVyc2lkZS5vZ2cKLi4uClRXTyBTSURFUyBPRiBUSEUgIFNBTUUgU1RPUlkuLi4gT1IuLi4uIFJJTkcsIFJJTkc/"; // Replace with your desired message
 
     function checkPassword() {
       const username = document.getElementById("username").value;
@@ -24,7 +112,7 @@
 
           if (username === storedUsername && password === storedPassword) {
             // Replace all content with the secret message
-            document.body.innerHTML = atob(correctAnswer);
+            document.body.innerHTML = atob(truth);
           } else {
             alert("Incorrect username or password");
           }
