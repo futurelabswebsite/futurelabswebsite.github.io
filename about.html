@@ -4,6 +4,24 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body style="background-color:#038cfc;">
+    <div class="wrapper">
+        <img src="assets/logo.png" alt="Future Labs Logo">
+        <h1>About us</h1>
+        <p>We at future labs got our name from our viewss about the  <strong>future</strong> 
+        We think that, the  future is about rapid growth in technology. And growth in technology, means growth for <strong> THE WORLD!</strong></p>
+        <p> You see the future can be flying cars, etc,etc however think of BETTER things, what if you had prefect  robot soliders ready to do your bidding, you would like that...</p>
+        <div class="glitch-wrapper">
+            <div class="glitch" data-glitch="WOUDLN'T YOU, AND WOULDN'T THEY LIKE AS WELL...  IT'S TOO BAD THAT... NEVERMIND AHAHAHAHAHAHAHAHAHAH">WOUDLN'T YOU, AND WOULDN'T THEY LIKE AS WELL...  IT'S TOO BAD THAT... NEVERMIND AHAHAHAHAHAHAHAHAHAH</div>
+        </div>
+    </div>
+
+    <div class="wrapper">
+        <img src="assets/logo.png" alt="Future Labs Logo">
+
+        <h2>AHAHAHAHAHAHAHAHAHAHAHAHHAAHHAHAHAAHH</h2>
+        <p>AHAHAHAHAHAHAHAHAHAHAHAHHAAHHAHAHAAHHAHAHAHAHAHAHAHAHAHAHAHAHHAAHHAHAHAAHHAHAHAHAHAHAHAHAHAHAHAHAHHAAHHAHAHAAHHAHAHAHAHAHAHAHAHAHAHAHAHHAAHHAHAHAAHHAHAHAHAHAHAHAHAHAHAHAHAHHAAHHAHAHAAHHAHAHAHAHAHAHAHAHAHAHAHAHHAAHHAHAHAAHHAHAHAHAHAHAHAHAHAHAHAHAHHAAHHAHAHAAHHAHAHAHAHAHAHAHAHAHAHAHAHHAAHHAHAHAAHHAHAHAHAHAHAHAHAHAHAHAHAHHAAHHAHAHAAHHAHAHAHAHAHAHAHAHAHAHAHAHHAAHHAHAHAAHHAHAHAHAHAHAHAHAHAHAHAHAHHAAHHAHAHAAHHAHAHAHAHAHAHAHAHAHAHAHAHHAAHHAHAHAAHHAHAHAHAHAHAHAHAHAHAHAHAHHAAHHAHAHAAHHAHAHAHAHAHAHAHAHAHAHAHAHHAAHHAHAHAAHHAHAHAHAHAHAHAHAHAHAHAHAHHAAHHAHAHAAHHAHAHAHAHAHAHAHAHAHAHAHAHHAAHHAHAHAAHHAHAHAHAHAHAHAHAHAHAHAHAHHAAHHAHAHAAHHAHAHAHAHAHAHAHAHAHAHAHAHHAAHHAHAHAAHHAHAHAHAHAHAHAHAHAHAHAHAHHAAHHAHAHAAHHAHAHAHAHAHAHAHAHAHAHAHAHHAAHHAHAHAAHHAHAHAHAHAHAHAHAHAHAHAHAHHAAHHAHAHAAHHAHAHAHAHAHAHAHAHAHAHAHAHHAAHHAHAHAAHHAHAHAHAHAHAHAHAHAHAHAHAHHAAHHAHAHAAHHAHAHAHAHAHAHAHAHAHAHAHAHHAAHHAHAHAAHHAHAHAHAHAHAHAHAHAHAHAHAHHAAHHAHAHAAHH</p>
+    </div>
+
     <script>
         const cookieName = 'ahaha_mode';
 
@@ -17,29 +35,28 @@
         }
 
         function replaceTextWithAhaha() {
-            const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null, false);
-            let node;
-            while (node = walker.nextNode()) {
-                node.textContent = 'AHAHAHAHAHAHAHAHA';
-            }
+            const h1 = document.querySelector('h1');
+            const paragraphs = document.querySelectorAll('p:not(.glitch)'); // Exclude the glitch paragraph
+            h1.textContent = 'AHAHAHAHAHAHAHAHA';
+            paragraphs.forEach(p => {
+                p.textContent = 'AHAHAHAHAHAHAHAHA';
+            });
         }
 
-        document.addEventListener('DOMContentLoaded', () => {
-            window.addEventListener('scroll', () => {
-                const scrollHeight = document.documentElement.scrollHeight;
-                const clientHeight = document.documentElement.clientHeight;
-                const scrollTop = window.scrollY || document.documentElement.scrollTop;
+        window.addEventListener('scroll', () => {
+            const scrollHeight = document.documentElement.scrollHeight;
+            const clientHeight = document.documentElement.clientHeight;
+            const scrollTop = window.scrollY || document.documentElement.scrollTop;
 
-                if (scrollTop + clientHeight >= scrollHeight && !checkCookie()) {
-                    replaceTextWithAhaha();
-                    setCookie(true);
-                }
-            });
-
-            if (checkCookie()) {
+            if (scrollTop + clientHeight >= scrollHeight && !checkCookie()) {
                 replaceTextWithAhaha();
+                setCookie(true);
             }
         });
+
+        if (checkCookie()) {
+            replaceTextWithAhaha();
+        }
     </script>
 </body>
 </html>
